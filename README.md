@@ -98,3 +98,17 @@ Crea las variables de entorno necesarias o configura directamente en el código:
 ```bash
 flutter run
 ```
+
+## Screenshots
+
+| Chat                              | Chat                                   |
+| --------------------------------- | -------------------------------------- |
+| ![Chat Screen](images/chat-1.png) | ![Watchlist Screen](images/chat-2.png) |
+
+| Watchlist                              | Watchlist                                   |
+| -------------------------------------- | ------------------------------------------- |
+| ![Chat Screen](images/watchlist-1.png) | ![Watchlist Screen](images/watchlist-2.png) |
+
+| Feedback                                      |     |
+| --------------------------------------------- | --- |
+| ![Search Movie Screen](images/feedback-1.png) |     |
