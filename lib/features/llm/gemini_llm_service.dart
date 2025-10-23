@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:movie_chat/features/llm/llm_service.dart';
 import 'package:movie_chat/features/llm/models/llm_response.dart';
@@ -27,7 +28,7 @@ $userPrompt
 }
 
 class GeminiLLMService implements LLMService {
-  static const String _apiKey = '';
+  static final String _apiKey = dotenv.get("GEMINI_API_KEY", fallback: "");
 
   static const String _baseUrl =
       'https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-lite-latest:generateContent';

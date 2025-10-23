@@ -1,11 +1,12 @@
 import 'dart:convert';
 
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:http/http.dart' as http;
 import 'package:movie_chat/features/watchlist/models/movie.dart';
 
 class OMDBApi {
   static const String _baseUrl = 'https://www.omdbapi.com/';
-  static const String _apiKey = '';
+  static final String _apiKey = dotenv.get("OMDB_API_KEY", fallback: "");
 
   Future<List<Movie>> searchMovies(String query) async {
     try {
