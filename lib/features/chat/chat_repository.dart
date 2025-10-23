@@ -32,7 +32,8 @@ class ChatRepository {
           timestamp: DateTime.now(),
         ),
       );
-    } on LLMResponseException catch (e) {
-    } on Exception catch (e) {}
+    } catch (e) {
+      throw Exception('Error al enviar mensaje');
+    }
   }
 }

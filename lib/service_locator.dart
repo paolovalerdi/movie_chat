@@ -2,7 +2,10 @@ import 'package:get_it/get_it.dart';
 import 'package:movie_chat/features/chat/chat_repository.dart';
 import 'package:movie_chat/features/chat/chat_store.dart';
 import 'package:movie_chat/features/llm/gemini_llm_service.dart';
+import 'package:movie_chat/features/watchlist/omdb_api.dart';
+import 'package:movie_chat/features/watchlist/watchlist_store.dart';
 import 'package:movie_chat/router/screens/chat/chat_state_holder.dart';
+import 'package:movie_chat/router/screens/watchlist/watchlist_state_holder.dart';
 import 'package:sembast/sembast_memory.dart';
 
 final locator = GetIt.instance;
@@ -22,5 +25,18 @@ Future<void> setupServiceLocator() async {
   // Chat screen
   locator.registerFactory<ChatStateHolder>(
     () => ChatStateHolder(repository: locator<ChatRepository>()),
+  );
+
+  // Watchlist screen
+  locator.registerFactory<WatchlistStore>(
+    () => WatchlistStore(db: locator<Database>()),
+  );
+  locator.registerFactory<OMDBApi>(() => OMDBApi());
+
+  locator.registerFactory<WatchlistStateHolder>(
+    () => WatchlistStateHolder(
+      store: locator<WatchlistStore>(),
+      api: locator<OMDBApi>(),
+    ),
   );
 }

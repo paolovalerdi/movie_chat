@@ -52,7 +52,6 @@ final class ChatStateHolder {
   }
 
   void sendMessage(String message) async {
-    print('sendMessage: $message');
     if (state.value.isSendingMessage) return;
     try {
       state.value = state.value.copyWith(isSendingMessage: true);

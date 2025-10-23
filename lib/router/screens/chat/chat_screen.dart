@@ -1,14 +1,19 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:movie_chat/router/router.dart';
 import 'package:movie_chat/router/screens/chat/chat_state_holder.dart';
 import 'package:movie_chat/router/screens/chat/widgets/composer.dart';
 import 'package:movie_chat/router/screens/chat/widgets/message_bubble.dart';
 import 'package:movie_chat/service_locator.dart';
+import 'package:movie_chat/widgets/app_logo.dart';
+import 'package:movie_chat/widgets/toolbar.dart';
 import 'package:movie_chat/widgets/widget_utils.dart';
 import 'package:provider/provider.dart';
 
 class ChatScreen extends HookWidget {
-  ChatScreen._();
+  const ChatScreen._();
 
   static Widget route() {
     return Provider(
@@ -23,9 +28,31 @@ class ChatScreen extends HookWidget {
     final state = useValueListenable(holder.state);
 
     return CupertinoPageScaffold(
-      backgroundColor: const Color(0xFF0F221C),
       child: Column(
         children: [
+          Toolbar(
+            padding: EdgeInsets.fromLTRB(16, 8, 10, 8),
+            trailing: Row(
+              children: [
+                GestureDetector(
+                  onTap: () => gotoWatchlist(context),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(LucideIcons.clapperboard, color: Colors.white),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(LucideIcons.user, color: Colors.white),
+                ),
+                // Padding(
+                //   padding: const EdgeInsets.all(8.0),
+                //   child: Icon(LucideIcons.bot, color: Colors.white),
+                // ),
+              ],
+            ),
+            child: AppLogo(),
+          ),
           Expanded(child: ChatList(state)),
           Composer(
             isLoading: state.isSendingMessage,
