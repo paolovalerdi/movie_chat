@@ -7,6 +7,7 @@ import 'package:movie_chat/router/screens/watchlist/watchlist_screen.dart';
 import 'package:movie_chat/router/screens/watchlist/watchlist_state_holder.dart';
 import 'package:movie_chat/state/async_value.dart';
 import 'package:movie_chat/widgets/toolbar.dart';
+import 'package:movie_chat/widgets/widget_utils.dart';
 
 class SearchScreen extends HookWidget {
   const SearchScreen({
@@ -35,12 +36,7 @@ class SearchScreen extends HookWidget {
             child: Icon(LucideIcons.circleX),
           ),
           child: Container(
-            decoration: ShapeDecoration(
-              color: Colors.white.withValues(alpha: 0.1),
-              shape: RoundedSuperellipseBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-            ),
+            decoration: textFieldDecoration,
             child: CupertinoTextField(
               placeholder: "¿Qué buscamos?",
               cursorColor: Colors.white,

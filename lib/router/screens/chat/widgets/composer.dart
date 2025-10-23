@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
+import 'package:movie_chat/widgets/widget_utils.dart';
 
 class Composer extends HookWidget {
   const Composer({
@@ -42,22 +43,15 @@ class Composer extends HookWidget {
                 duration: const Duration(milliseconds: 550),
                 curve: Curves.easeInOut,
                 child: Container(
-                  decoration: ShapeDecoration(
-                    color: Colors.white.withValues(alpha: 0.1),
-                    shape: RoundedSuperellipseBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                  ),
+                  decoration: textFieldDecoration,
                   child: CupertinoTextField(
                     controller: controller,
                     placeholder: "Escribe tu mensaje...",
                     enabled: !isLoading,
-                    cursorColor: Colors.white,
-                    style: TextStyle(color: Colors.white),
                     padding: EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-                    decoration: BoxDecoration(color: Colors.transparent),
+                    decoration: BoxDecoration(),
                     placeholderStyle: TextStyle(
-                      color: Colors.white.withValues(alpha: 0.5),
+                      color: Colors.white.withValues(alpha: 0.4),
                     ),
                   ),
                 ),

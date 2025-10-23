@@ -1,5 +1,4 @@
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:lucide_icons_flutter/lucide_icons.dart';
 import 'package:movie_chat/router/router.dart';
@@ -33,22 +32,19 @@ class ChatScreen extends HookWidget {
           Toolbar(
             padding: EdgeInsets.fromLTRB(16, 8, 10, 8),
             trailing: Row(
+              spacing: 8,
               children: [
                 GestureDetector(
                   onTap: () => gotoWatchlist(context),
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Icon(LucideIcons.clapperboard, color: Colors.white),
+                    child: Icon(LucideIcons.clapperboard),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Icon(LucideIcons.user, color: Colors.white),
+                GestureDetector(
+                  onTap: () => gotoFeedback(context),
+                  child: Icon(LucideIcons.messageCircleHeart),
                 ),
-                // Padding(
-                //   padding: const EdgeInsets.all(8.0),
-                //   child: Icon(LucideIcons.bot, color: Colors.white),
-                // ),
               ],
             ),
             child: AppLogo(),
