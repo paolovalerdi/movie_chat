@@ -37,8 +37,8 @@ lib/
 ├── router/
 │   ├── router.dart
 │   └── screens/
-├── service_locator.dart               # Inyección de dependencias
-└── main.dart                          # Punto de entrada
+├── service_locator.dart
+└── main.dart
 ```
 
 ## 🛠️ Tecnologías
@@ -87,11 +87,12 @@ flutter pub get
 
 3. **Configurar API Keys**
 
-Crea las variables de entorno necesarias o configura directamente en el código:
+Crea un archivo `.env` en la raíz del proyecto y agrega tus API Keys
 
-- `GEMINI_API_KEY`: Tu clave de API de Gemini
-- `OMDB_API_KEY`: Tu clave de API de OMDb
-- `PIPEDREAM_API_URL`: URL de tu endpoint de Pipedream
+```
+GEMINI_API_KEY=<YOUR_API_KEY>
+OMDB_API_KEY=<YOUR_API_KEY>
+```
 
 4. **Ejecutar la aplicación**
 
@@ -99,7 +100,7 @@ Crea las variables de entorno necesarias o configura directamente en el código:
 flutter run
 ```
 
-## Screenshots
+## 🏞️ Screenshots
 
 | Chat                              | Chat                                   |
 | --------------------------------- | -------------------------------------- |
