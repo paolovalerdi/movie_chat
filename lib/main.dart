@@ -13,6 +13,14 @@ class MovieChatApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(title: 'Movies', home: ChatScreen.route());
+    return CupertinoApp(
+      title: 'Movies',
+      theme: CupertinoThemeData(
+        brightness: Brightness.dark,
+        primaryColor: Color(0xFF1D9963),
+        scaffoldBackgroundColor: Color(0xFF0F221C),
+      ),
+      home: ChatScreen.route(),
+    );
   }
 }
