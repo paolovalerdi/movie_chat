@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
-import 'package:movie_chat/features/account/feedback_repository.dart';
+import 'package:movie_chat/features/feedback/feedback_repository.dart';
 
 final class FeedbackState extends Equatable {
   const FeedbackState({

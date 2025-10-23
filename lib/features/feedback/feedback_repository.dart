@@ -1,5 +1,5 @@
-import 'package:movie_chat/features/account/feedback_api.dart';
-import 'package:movie_chat/features/account/feedback_store.dart';
+import 'package:movie_chat/features/feedback/feedback_api.dart';
+import 'package:movie_chat/features/feedback/feedback_store.dart';
 
 class FeedbackRepository {
   FeedbackRepository({required this.feedbackApi, required this.feedbackStore});
