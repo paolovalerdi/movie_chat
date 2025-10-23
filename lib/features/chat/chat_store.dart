@@ -10,7 +10,7 @@ class ChatStore {
 
   Stream<List<ChatMessage>> stream() {
     final query = _store.query(
-      finder: Finder(sortOrders: [SortOrder('timestamp', true)]),
+      finder: Finder(sortOrders: [SortOrder('timestamp', false)]),
     );
 
     return query.onSnapshots(_db).map((snapshot) {
