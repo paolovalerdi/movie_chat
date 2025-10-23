@@ -2,6 +2,8 @@
 
 Una aplicación Flutter para conversar sobre películas con inteligencia artificial, gestionar tu lista de películas favoritas y proporcionar feedback sobre la experiencia.
 
+Para facilitar el acceso a la aplicación [aquí puedes encontrar un APK precompilado](https://drive.google.com/file/d/1wThLfUyQJLZuBBIPPMMZoEzD_AXtQlSC/view?usp=sharing)
+
 ## 📋 Características
 
 - **💬 Chat con IA**: Conversa sobre películas con Gemini AI
