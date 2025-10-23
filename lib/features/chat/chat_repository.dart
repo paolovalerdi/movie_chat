@@ -23,7 +23,7 @@ class ChatRepository {
         ),
       );
 
-      final response = await llmServices.prompt("message");
+      final response = await llmServices.prompt(message);
 
       chatStore.saveMessage(
         ChatMessage(
