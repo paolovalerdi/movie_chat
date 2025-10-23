@@ -62,7 +62,7 @@ class ChatScreen extends HookWidget {
   // ignore: non_constant_identifier_names
   Widget ChatList(ChatState state) {
     if (state.messages.isEmpty) {
-      return const Center(child: Text('No messages yet'));
+      return const Center(child: Text('No hay mensajes aún'));
     }
 
     final builders = <WidgetBuilder>[

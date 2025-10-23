@@ -7,7 +7,6 @@ import 'package:movie_chat/router/screens/watchlist/search_screen.dart';
 import 'package:movie_chat/router/screens/watchlist/watchlist_state_holder.dart';
 import 'package:movie_chat/service_locator.dart';
 import 'package:movie_chat/widgets/toolbar.dart';
-import 'package:movie_chat/widgets/widget_utils.dart';
 import 'package:provider/provider.dart';
 
 class WatchlistScreen extends HookWidget {
@@ -64,10 +63,9 @@ class WatchlistScreen extends HookWidget {
       );
     }
 
-    return ListView.separated(
+    return ListView.builder(
       padding: EdgeInsets.zero,
       itemCount: state.movies.length,
-      separatorBuilder: separator(height: 12),
       itemBuilder: (context, index) {
         final movie = state.movies[index];
         return MovieCard(

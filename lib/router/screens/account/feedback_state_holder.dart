@@ -69,7 +69,7 @@ final class FeedbackStateHolder {
       state.value = state.value.copyWith(
         isSubmitting: false,
         savedToken: token,
-        successMessage: 'Thank you! Your feedback has been submitted.',
+        successMessage: 'Gracias! Tu comentario ha sido enviado.',
       );
 
       // Clear success message after 3 seconds
@@ -81,7 +81,8 @@ final class FeedbackStateHolder {
     } catch (e) {
       state.value = state.value.copyWith(
         isSubmitting: false,
-        errorMessage: 'Failed to submit feedback. Please try again.',
+        errorMessage:
+            'Error al enviar el comentario. Por favor, intenta nuevamente.',
       );
     }
   }
