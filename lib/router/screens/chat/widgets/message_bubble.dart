@@ -30,7 +30,10 @@ class MessageBubble extends StatelessWidget {
       Container(
         width: 32,
         height: 32,
-        decoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
+        decoration: BoxDecoration(
+          color: Colors.white.withValues(alpha: 0.25),
+          shape: BoxShape.circle,
+        ),
       ),
       SizedBox(width: 12),
       Expanded(
@@ -138,11 +141,17 @@ class MessageBubble extends StatelessWidget {
                     curve: Curves.easeInOut,
                   ),
               if (!asAnimatedPlaceholder)
-                Text(
-                  displayDateTimeText(message.timestamp),
-                  style: TextStyle(
-                    color: Colors.white.withValues(alpha: 0.35),
-                    fontSize: 12,
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 4,
+                  ),
+                  child: Text(
+                    displayDateTimeText(message.timestamp),
+                    style: TextStyle(
+                      color: Colors.white.withValues(alpha: 0.35),
+                      fontSize: 12,
+                    ),
                   ),
                 ),
             ],
